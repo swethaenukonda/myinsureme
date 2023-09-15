@@ -33,3 +33,5 @@ stage('Docker Image Push') {
 
 }
 }
+}
+}
