@@ -9,5 +9,10 @@ stages {
          git 'https://github.com/swethaenukonda/myinsureme.git'
              }
         }
+stage('Build Package') {
+       steps {
+         sh 'mvn package'
+       }
+}
 }
 }
