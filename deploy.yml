@@ -2,6 +2,8 @@
 - hosts: all
   become: true
   tasks:
+  - name: update ubuntu
+    apt: update 
   - name: Install Docker
     apt: name=docker.io state=present
   - name: Start Docker Service
