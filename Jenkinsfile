@@ -36,7 +36,7 @@ stage('Docker Image Push') {
   stage('Application Deploy-container') {
           steps {
             
-         ansiblePlaybook credentialsId: 'SSH-key', disableHostKeyChecking: true, installation: 'ansible', playbook: 'deploy.yml'
+       ansiblePlaybook credentialsId: 'ubuntu-ssh', disableHostKeyChecking: true, installation: 'ansible', playbook: 'deploy.yml'
 }
 }
 }
