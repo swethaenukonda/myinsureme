@@ -23,6 +23,13 @@ stage('Build Package') {
        steps {
          sh 'docker build -t swethamba859/insureme-app:1.0 .'
              }
-         }
+     }
+stage('Docker Image Push') {
+       steps {
+         withCredentials([string(credentialsId: 'docker-hub2', variable: ''), usernamePassword(credentialsId: 'docker1-hub', passwordVariable: 'dockerhub-password', usernameVariable: 'dockerhub-user')]) {
+         sh 'docker login -u ${dockerhub-user} -p ${dockerhub-password}'
+       }
+         sh 'docker push swethamba859/insureme-app:1.0'
+
 }
 }
