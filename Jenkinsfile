@@ -21,7 +21,7 @@ stage('Build Package') {
          }
    stage('Create Docker image of App') {
        steps {
-         sh 'docker build -t cbabu85/Insureme-app:1.0 .'
+         sh 'docker build -t swethamba859/insureme-app:1.0 .'
              }
          }
 }
