@@ -33,5 +33,11 @@ stage('Docker Image Push') {
 
 }
 }
+  stage('Application Deploy-container') {
+          steps {
+            
+           ansiblePlaybook become: true, credentialsId: 'SSH-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'prod.inventory', playbook: 'deploy.yml'
+}
+}
 }
 }
