@@ -26,8 +26,8 @@ stage('Build Package') {
      }
 stage('Docker Image Push') {
        steps {
-      withCredentials([usernamePassword(credentialsId: 'dockerhub3', passwordVariable: 'dockerhub-password', usernameVariable: 'dockerhub-user')]) {
-         sh 'docker login -u ${dockerhub-user} -p ${dockerhub-password}'
+      withCredentials([usernamePassword(credentialsId: 'docker1hub', passwordVariable: 'docker_password', usernameVariable: 'docker_user')]) {
+         sh 'docker login -u ${docker_user} -p ${docker_password}'
        }
          sh 'docker push swethamba859/insureme-app:1.0'
 
